@@ -4,6 +4,7 @@ class Post < ActiveRecord::Base
     validates :name, uniqueness: true 
     validates :content, length: { minimum: 250 } 
     validates :summary, length: { maximum: 250 } 
-    validates :category, inclusion: { in "Fiction", "Non-Fiction" }
+    validates :category, inclusion: { in: %w(Fiction, Non-Fiction),
+      message: "%{value} is invalid"}
 
 end
