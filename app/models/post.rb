@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
 
-validates :title, presence: true 
+    validates :title, presence: true 
     validates :name, uniqueness: true 
     validates :content, length: { :minimum 250 } 
     validates :summary, length: { :maximum 250 } 
